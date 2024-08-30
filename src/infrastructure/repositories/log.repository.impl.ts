@@ -8,11 +8,13 @@ export class LogRepositoryImpl implements LogRepository {
         private readonly logDatasource:LogDatasource,
     ) {}
 
-    saveLog(log: LogEntity): Promise<void> {
-        throw new Error("Method not implemented.");
+    async saveLog(log: LogEntity): Promise<void> {
+
+        return this.logDatasource.saveLog(log);
     }
-    getLogs(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {
-        throw new Error("Method not implemented.");
+    async getLogs(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {
+
+        return this.logDatasource.getLogs(severityLevel);
     }
 
 }
